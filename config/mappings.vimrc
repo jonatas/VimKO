@@ -59,7 +59,7 @@ nnoremap <silent> q :<C-u>:quit<CR>
 nmap <leader>; :TagbarToggle<CR>
 
 " Open easy motion between panels
-nmap <silent> / <Plug>(easymotion-overwin-f2)
+"nmap <silent> / <Plug>(easymotion-overwin-f2)
 
 " Paste without yank
 vnoremap p "_dP
@@ -75,7 +75,7 @@ vnoremap <expr> cN "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>" . "``cgN"
 " Save with sudo
 cmap W!! w !sudo tee % >/dev/null
 
-" Smart Duplication
+
 nnoremap <Leader>d :t.<cr>
 vnoremap <Leader>d :co-1<cr>
 
@@ -88,6 +88,7 @@ vnoremap M :norm @q<CR>
 nnoremap <silent><leader>l :!!<CR>
 
 " Select blocks after indenting
+nnoremap [Files]d :call pry#insert()<CR><Space>
 xnoremap < <gv
 xnoremap > >gv|
 
@@ -186,6 +187,7 @@ nnoremap <silent> [Files]e :NERDTreeToggle<CR>
 nnoremap [Files]g :F <c-r>=expand("<cword>")<cr> all --source=rg<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 nnoremap [Files]r :Far <c-r>=expand("<cword>")<cr>  all  --source=rg<left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
+
 " -----------------------------------------------------------------------------
 " FuzzyFinder
 " -----------------------------------------------------------------------------
@@ -196,7 +198,7 @@ nnoremap <silent> [FuzzyFinder]t :Tags <cr>
 nnoremap <silent> [FuzzyFinder]T :BTags <cr>
 nnoremap <silent> [FuzzyFinder]c :BCommits <cr>
 nnoremap <silent> [FuzzyFinder]b :Buffers <cr>
-nnoremap <silent> [FuzzyFinder]/ :BLines <cr>
+"nnoremap <silent> [FuzzyFinder]/ :BLines <cr>
 nnoremap <silent> [FuzzyFinder]m :Marks <cr>
 
 " -----------------------------------------------------------------------------
@@ -206,8 +208,8 @@ nmap <Leader>t= :Tabularize /=    <CR>
 vmap <Leader>t= :Tabularize /=    <CR>
 nmap <Leader>t: :Tabularize /:\zs <CR>
 vmap <Leader>t: :Tabularize /:\zs <CR>
-nmap <Leader>tt :Tabularize /
-vmap <Leader>tt :Tabularize /
+"nmap <Leader>tt :Tabularize /
+"vmap <Leader>tt :Tabularize /
 
 " -----------------------------------------------------------------------------
 " Javascript
@@ -218,6 +220,7 @@ function! JSTextObjectFunction()
     normal! vf{%
 endfunction
 vnoremap af :<C-U>silent! :call JSTextObjectFunction()<CR>
+
 
 " " fugitive git bindings
 " nnoremap <space>ga :Git add %:p<CR><CR>

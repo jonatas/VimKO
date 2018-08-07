@@ -183,4 +183,8 @@ Plug 'pearofducks/ansible-vim', { 'for': 'yaml.ansible' }
 " Docker
 " -----------------------------------------------------------------------------
 Plug 'ekalinin/Dockerfile.vim'
+
+
+Plug 'BlakeWilliams/vim-pry'
+
 call plug#end()
